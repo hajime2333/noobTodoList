@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="big-title">
+        <h1 style="text-align: center;">Todo  list</h1>
+        <hr>
+        
+    </div>
+    <div calss="new-list" style="text-align: center;">
+        <!--输入框和按钮-->
+        
+            <input type="text" id="todo" name="new-list" required minlength="1" maxlength="10" size="50" style="width: 200px; height: 50px;font-size: 30px;"/>  <button type="button" onclick="addToList()"  style="height: 50px;width: 50px;">提交</button>
+        
+    </div>
+    <div class="todo-list" style="text-align: center;">
+        
+            <div class="todo-unt">
+                <input class="toggle" type="checkbox" >
+                <lable>吃饭</lable>
+                <input type="button" value="删除"></button>
+            </div>
+            <div class="todo-unt">
+                <input class="toggle" type="checkbox" >
+                <lable>睡觉</lable>
+                <input type="button" value="删除"></button>
+            </div>
+        
+        
+        
+    </div>
+    <div class="down-list">
+
+    </div>
+    <script src="index.js"></script>
+
+</body>
+</html>

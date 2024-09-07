@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Form to List</title>
+<script>
+function addToList() {
+    const inputField = document.getElementById('inputField');
+    var inputValue = inputField.value;
+    if (inputValue) {
+        var listItem = document.createElement('li'); // 创建新的列表项
+        listItem.textContent = inputValue; // 设置列表项的文本内容
+        document.getElementById('outputList').appendChild(listItem); // 将列表项添加到列表中
+        inputField.value = ''; // 清空输入字段
+    }
+}
+</script>
+</head>
+<body>
+<form>
+    <input type="text" id="inputField" placeholder="Enter text">
+    <button type="button" onclick="addToList()">Add to List</button>
+</form>
+<ul id="outputList"></ul>
+</body>
+</html>
+
