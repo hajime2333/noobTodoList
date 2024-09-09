@@ -2,18 +2,16 @@
 const todos = [
     { text:'吃饭', done:false },
     { text:'睡觉', done:false },
-    { text:'打豆12', done:true },
+    { text:'打豆豆', done:true },
 ];
-
 function loadTodos(){
 const todolistUl = document.querySelector('.todo-list');
 const arr = [];
-
-todos.forEach(function(todo , index) {  
+todos.forEach(function(todo ,index) {  
     arr.push(
         
         '<div class="todo-unt" >'+
-        '     <input class="toggle" type="checkbox" '+ (todo.done ? 'checked':'')+'>' +
+        '     <input  class="toggle" data-index=" '+index+' " type="checkbox" '+ (todo.done ? 'checked':'')+'>' +
         '     <lable class='+ (todo.done ? 'completed':'')+'> '+todo.text +'</lable>' +
         '     <input type="button" data-index=" '+ index+' " class="distory" value="删除" ></button>' +
         '</div>' 
@@ -40,9 +38,25 @@ const todolistUl = document.querySelector('.todo-list');
 todolistUl.onclick = function(e){
     if (e.target.matches('.distory')) {
         const index = e.target.dataset.index;
+        console.log(index)
         todos.splice(index,1);
         loadTodos();
     };
 };
-//完成划线
+//切换状态：完成划线\取消划线
+const todolistUl1 = document.querySelector('.todo-list');
+todolistUl1.onchange = function(e){
+    if (e.target.matches('.toggle') ){
+        console.log('123')
+        const index = e.target.dataset.index;
+        const indexNum = parseInt(index);
+        if (todos[indexNum].done === false){
+            todos[indexNum].done = true;
+        }else{
+            todos[indexNum].done = false;
+        };
+        loadTodos();
+    };
+};
+
 
